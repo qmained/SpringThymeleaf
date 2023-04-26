@@ -7,5 +7,5 @@ import java.util.List;
 
 @Component
 public interface CarService {
-    public List<Car> index(int count);
+    List<Car> index(int count);
 }
