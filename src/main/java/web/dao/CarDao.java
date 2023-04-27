@@ -7,6 +7,6 @@ import java.util.List;
 
 @Component
 public interface CarDao {
-    List<Car> index(int count);
+    List<Car> getCarList(int count);
 
 }

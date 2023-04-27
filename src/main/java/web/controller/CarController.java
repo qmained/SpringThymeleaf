@@ -12,7 +12,7 @@ import web.service.CarService;
 @RequestMapping("/cars")
 public class CarController {
 
-    CarService carService;
+    private CarService carService;
 
     @Autowired
     public CarController(CarService carService) {
@@ -21,7 +21,7 @@ public class CarController {
 
     @GetMapping()
     public String getCars(@RequestParam(name = "count") int count, ModelMap model) {
-        model.addAttribute("cars", carService.index(count));
+        model.addAttribute("cars", carService.getCarList(count));
         return "cars/show";
     }
 

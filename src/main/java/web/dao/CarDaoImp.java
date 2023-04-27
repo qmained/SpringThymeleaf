@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 @Component
 public class CarDaoImp implements CarDao {
-    private static long carCount;
+    private long carCount;
     private List<Car> cars = new ArrayList<>();
 
     {
@@ -18,7 +18,7 @@ public class CarDaoImp implements CarDao {
         cars.add(new Car(++carCount, "OldModel", 111, "AnotherRandomOwner"));
     }
 
-    public List<Car> index(int count) {
+    public List<Car> getCarList(int count) {
         return count < 5 ? cars.stream().limit(count).collect(Collectors.toList()) : cars;
     }
 
